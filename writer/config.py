@@ -7,7 +7,8 @@ Configuration file for the SD card writer tool.
 
 import os
 
-CHUNK = 1024 * 1024
+BLOCK_SIZE = 1024
+CHUNK = BLOCK_SIZE * BLOCK_SIZE
 
 VAR_SD_CARD_WRITER_FOLDER = "varwriter"
 CACHEDIR = os.path.join(os.environ['HOME'], ".cache", VAR_SD_CARD_WRITER_FOLDER)
@@ -20,6 +21,10 @@ SOFTWARE = "Software"
 OS_YOCTO = "yocto"
 OS_DEBIAN = "debian"
 OS_B2QT = "b2qt"
+
+FTP_DOMAIN_HOST_NAME = "ftp.variscite.com"
+FTP_PASSWD_READ_ONLY = "customerv"
+FTP_USER_NAME_READ_ONLY = "Variscite1"
 
 YAML_CHANGELOG_MX8M_B2QT    = "mx8m-b2qt-recovery-sd-changelog.yml"
 YAML_CHANGELOG_MX8M_DEBIAN  = "mx8m-debian-recovery-sd-changelog.yml"
