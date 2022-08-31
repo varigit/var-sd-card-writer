@@ -1,9 +1,9 @@
 # Copyright 2022 Variscite LTD
 # SPDX-License-Identifier: BSD-3-Clause
 
-'''
+"""
 Functions to handle the FTP server from Variscite.
-'''
+"""
 
 import ftplib
 import os

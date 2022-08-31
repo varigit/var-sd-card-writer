@@ -1,9 +1,9 @@
 # Copyright 2022 Variscite LTD
 # SPDX-License-Identifier: BSD-3-Clause
 
-'''
+"""
 Utils function to help on the Variscite SD card writer tool.
-'''
+"""
 
 import gzip
 import io

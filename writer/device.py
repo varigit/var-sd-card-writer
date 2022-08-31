@@ -1,9 +1,9 @@
 # Copyright 2022 Variscite LTD
 # SPDX-License-Identifier: BSD-3-Clause
 
-'''
+"""
 Function to query system's hard devices.
-'''
+"""
 
 import itertools
 import sys
