@@ -1,0 +1,32 @@
+#MainBox {
+    background: #fefefe;
+}
+
+#MainButton {
+    color: #fefefe;
+    background: #0055a5;
+    border-radius: 15px;
+    border: none;
+}
+
+#MainButton:hover {
+    background: #0033a5;
+}
+
+#MainButton:disabled {
+    background: #0066aa;
+}
+
+#SelectModuleLabel {
+    color: #0055a5;
+}
+
+progressbar > trough {
+    min-height: 20px;
+}
+    progressbar > trough > progress{
+    background-image: none;
+    background-color: #0055a5;
+    border-color: #0055a5;
+    min-height: 20px;
+}
