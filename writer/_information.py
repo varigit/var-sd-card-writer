@@ -6,6 +6,7 @@ Information file.
 """
 
 import re
+import sys
 
 
 COMMENTS = "SD Card Writer Tool"
