@@ -5,10 +5,10 @@
 Information file.
 """
 
-COMMENTS = "SD Card Writer Tool"
+COMMENTS = "Flash the latest OS images to SD cards, safely and easily"
 COPYRIGHT = "Copyright 2022 Variscite LTD"
 AUTHORS = ["Alifer Moraes", "Diego Dorta"]
-PROGRAM_NAME = "Variscite SD Card Writer Tool"
+PROGRAM_NAME = "SD Card Writer Tool"
 WEBSITE = "https://github.com/varigit/var-sd-card-writer"
 WEBSITE_LABEL = "SD Card Writer on GitHub"
 
