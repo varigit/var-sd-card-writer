@@ -68,28 +68,27 @@ def get_images_list_from_ftp(module_name) -> Tuple:
     """
     images = []
     module = VAR_MODULES[module_name]
-    path = _remote_changelog_path_yocto(module)
-    if not (ftp_r := connect_ftp()):
-        sys.exit("Could not establish FTP connection using the credentials.")
-    file_path, file_name = os.path.split(path)
+    paths = _remote_changelog_path_yocto(module)
+    if not (ftp_r := connect_ftp(ftp_user_name="customerv", ftp_passwd="Variscite1")):
+        sys.exit("[INFO]: Could not establish FTP connection using the credentials.")
+
+    file_path, file_name = os.path.split(paths)
     local_file = os.path.join(CACHEDIR, file_name)
+
     if os.path.exists(local_file):
         os.remove(local_file)
+
     with open(local_file, 'wb') as f:
         retrieved = retrieve_remote_file(ftp_r[0], file_name, file_path, f.write)
+
     if retrieved:
         yaml_file_read = read_yaml_file(local_file)
         for release in yaml_file_read:
-            image = []
-            image_path = release['Release']['Upload Path']
-            file_path, file_name = os.path.split(image_path)
-            file_size = release['Release']['Image Size']
-            image.append(file_name)
-            image.append(file_size)
-            images.append(image)
-        return images, file_path
+            images.append(release)
+
+        return images
     else:
-        return (False, False)
+        return None
 
 def read_yaml_file(file_path) -> List:
     """
