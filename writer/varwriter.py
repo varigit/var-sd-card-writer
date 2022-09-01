@@ -33,6 +33,7 @@ gi.require_versions({'Gdk': "3.0", 'Gtk': "3.0"})
 from gi.repository import Gdk, Gtk
 import os
 
+from writer.config import CACHEDIR
 from writer.menubar import MenuBar
 from writer.select import SelectImage
 from writer.welcome import MainWindow
@@ -83,6 +84,7 @@ class VarWriterGUI(Gtk.Window):
 
 
 def main():
+    os.makedirs(CACHEDIR, exist_ok=True)
     app = VarWriterGUI()
     app.set_icon_from_file(os.path.join(os.path.dirname(os.path.realpath(__file__)), "assets", "variscite_icon.png"))
     app.connect('delete-event', Gtk.main_quit)
