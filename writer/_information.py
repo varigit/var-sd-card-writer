@@ -15,7 +15,7 @@ AUTHORS = ["Alifer Moraes", "Diego Dorta"]
 PROGRAM_NAME = "Variscite SD Card Writer Tool"
 
 VERSION_FILE = "_version.py"
-version = "unknown"
+VERSION = "Unknown"
 try:
     verstrline = open(VERSION_FILE, "rt").read()
 except EnvironmentError:
