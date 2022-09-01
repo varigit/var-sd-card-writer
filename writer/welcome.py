@@ -9,7 +9,7 @@ import os
 
 from writer.flasher import FlashImage
 from writer.device import query_disk_devices
-from v.utils import get_readable_size
+from writer.utils import get_readable_size
 
 
 class MainWindow(Gtk.Box):
