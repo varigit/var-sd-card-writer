@@ -15,8 +15,8 @@ try:
 except ImportError:
     sys.exit("Unable to import package 'pyudev'. Please read the documentation")
 
-from .config import IGNORED_DEVICE_PATHS
-from .utils import get_readable_size
+from writer.config import IGNORED_DEVICE_PATHS
+from writer.utils import get_readable_size
 
 
 def query_disk_devices(readable=True) -> Dict[str, dict]:

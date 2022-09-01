@@ -10,9 +10,9 @@ import os
 from subprocess import Popen, PIPE
 from threading import Thread
 
-from .config import CACHEDIR
-from .ftp import connect_ftp
-from .utils import is_gzipped, get_file_size, get_gzipped_file_size
+from writer.config import CACHEDIR
+from writer.ftp import connect_ftp
+from writer.utils import is_gzipped, get_file_size, get_gzipped_file_size
 
 
 class FlashImage(Gtk.Box):

@@ -33,9 +33,9 @@ gi.require_versions({'Gdk': "3.0", 'Gtk': "3.0"})
 from gi.repository import Gdk, Gtk
 import os
 
-from .menubar import MenuBar
-from .select import SelectImage
-from .welcome import MainWindow
+from writer.menubar import MenuBar
+from writer.select import SelectImage
+from writer.welcome import MainWindow
 
 
 settings = Gtk.Settings.get_default()

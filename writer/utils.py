@@ -17,16 +17,16 @@ try:
 except ImportError:
     sys.exit("Unable to import package 'yaml'. Please read the documentation")
 
-from .config import CACHEDIR
-from .config import MX8_YAML_CHANGELOG_FILES_B2QT
-from .config import MX8_YAML_CHANGELOG_FILES_DEBIAN
-from .config import MX8_YAML_CHANGELOG_FILES_YOCTO
-from .config import SIZE_NAME
-from .config import SOFTWARE, OS_B2QT, OS_DEBIAN
-from .config import VAR_MODULES
+from writer.config import CACHEDIR
+from writer.config import MX8_YAML_CHANGELOG_FILES_B2QT
+from writer.config import MX8_YAML_CHANGELOG_FILES_DEBIAN
+from writer.config import MX8_YAML_CHANGELOG_FILES_YOCTO
+from writer.config import SIZE_NAME
+from writer.config import SOFTWARE, OS_B2QT, OS_DEBIAN
+from writer.config import VAR_MODULES
 
-from .ftp import connect_ftp
-from .ftp import retrieve_remote_file
+from writer.ftp import connect_ftp
+from writer.ftp import retrieve_remote_file
 
 
 def _remote_changelog_path_b2qt(module) -> str:

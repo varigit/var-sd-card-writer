@@ -8,8 +8,8 @@ from gi.repository import GLib, Gtk
 import os
 from threading import Thread
 
-from .config import VAR_MODULES
-from .utils import get_images_list_from_ftp
+from writer.config import VAR_MODULES
+from writer.utils import get_images_list_from_ftp
 
 
 class SelectImage(Gtk.Box):

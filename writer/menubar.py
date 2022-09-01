@@ -12,14 +12,14 @@ import gi
 gi.require_versions({'GdkPixbuf': "2.0", 'Gtk': "3.0"})
 from gi.repository import GdkPixbuf, Gtk
 
-from ._information import AUTHORS
-from ._information import COMMENTS
-from ._information import COPYRIGHT
-from ._information import PROGRAM_NAME
-from ._information import VERSION
-from ._information import WEBSITE
-from ._information import WEBSITE_LABEL
-from ._information import LICENSE
+from writer._information import AUTHORS
+from writer._information import COMMENTS
+from writer._information import COPYRIGHT
+from writer._information import PROGRAM_NAME
+from writer._information import VERSION
+from writer._information import WEBSITE
+from writer._information import WEBSITE_LABEL
+from writer._information import LICENSE
 
 
 class MenuBar(Gtk.MenuBar):

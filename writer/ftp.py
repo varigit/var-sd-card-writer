@@ -10,11 +10,11 @@ import os
 import sys
 from typing import Tuple
 
-from .config import BLOCK_SIZE
-from .config import CACHEDIR
-from .config import FTP_DOMAIN_HOST_NAME
-from .config import FTP_PASSWD_READ_ONLY
-from .config import FTP_USER_NAME_READ_ONLY
+from writer.config import BLOCK_SIZE
+from writer.config import CACHEDIR
+from writer.config import FTP_DOMAIN_HOST_NAME
+from writer.config import FTP_PASSWD_READ_ONLY
+from writer.config import FTP_USER_NAME_READ_ONLY
 
 
 def connect_ftp(ftp_user_name=FTP_USER_NAME_READ_ONLY,

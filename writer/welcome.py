@@ -7,9 +7,9 @@ gi.require_versions({'GdkPixbuf': "2.0", 'Gtk': "3.0"})
 from gi.repository import GdkPixbuf, Gtk
 import os
 
-from .flash import FlashImage
-from .device import query_disk_devices
-from .utils import get_readable_size
+from writer.flasher import FlashImage
+from writer.device import query_disk_devices
+from v.utils import get_readable_size
 
 
 class MainWindow(Gtk.Box):
