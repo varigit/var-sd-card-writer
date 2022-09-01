@@ -33,6 +33,8 @@ gi.require_versions({'Gdk': "3.0", 'Gtk': "3.0"})
 from gi.repository import Gdk, Gtk
 import os
 
+from writer import __version__
+
 from writer.config import CACHEDIR
 from writer.menubar import MenuBar
 from writer.select import SelectImage
@@ -46,7 +48,7 @@ settings.set_property("gtk-application-prefer-dark-theme", False)  # if you want
 
 class VarWriterGUI(Gtk.Window):
     def __init__(self):
-        super(VarWriterGUI, self).__init__(title="Var Writer")
+        super(VarWriterGUI, self).__init__(title=f"SD Card Writer Tool v{__version__}")
         self.set_default_size(960, 590)
         self.set_position(Gtk.WindowPosition.CENTER)
         self.set_resizable(False)

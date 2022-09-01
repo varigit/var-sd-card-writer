@@ -5,29 +5,10 @@
 Information file.
 """
 
-import re
-import sys
-
-
 COMMENTS = "SD Card Writer Tool"
 COPYRIGHT = "Copyright 2022 Variscite LTD"
 AUTHORS = ["Alifer Moraes", "Diego Dorta"]
 PROGRAM_NAME = "Variscite SD Card Writer Tool"
-
-VERSION_FILE = "_version.py"
-VERSION = "Unknown"
-try:
-    verstrline = open(VERSION_FILE, "rt").read()
-except EnvironmentError:
-    pass
-else:
-    VSRE = r"^__version__ = ['\"]([^'\"]*)['\"]"
-    mo = re.search(VSRE, verstrline, re.M)
-    if mo:
-        VERSION = mo.group(1)
-    else:
-        sys.exit(f"Unable to find version in {VERSION_FILE}")
-
 WEBSITE = "https://github.com/varigit/var-sd-card-writer"
 WEBSITE_LABEL = "SD Card Writer on GitHub"
 

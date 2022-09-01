@@ -12,12 +12,13 @@ import gi
 gi.require_versions({'GdkPixbuf': "2.0", 'Gtk': "3.0"})
 from gi.repository import GdkPixbuf, Gtk
 
+from writer import __version__
+
 from writer.config import CACHEDIR
 from writer._information import AUTHORS
 from writer._information import COMMENTS
 from writer._information import COPYRIGHT
 from writer._information import PROGRAM_NAME
-from writer._information import VERSION
 from writer._information import WEBSITE
 from writer._information import WEBSITE_LABEL
 from writer._information import LICENSE
@@ -51,7 +52,7 @@ class MenuBar(Gtk.MenuBar):
         dialog.set_copyright(COPYRIGHT)
         dialog.set_license(LICENSE)
         dialog.set_program_name(PROGRAM_NAME)
-        dialog.set_version(VERSION)
+        dialog.set_version(__version__)
         dialog.set_website(WEBSITE)
         dialog.set_website_label(WEBSITE_LABEL)
         dialog.connect("response", self.on_about_dialog_button_clicked)
