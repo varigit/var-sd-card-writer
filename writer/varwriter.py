@@ -55,7 +55,7 @@ class VarWriterGUI(Gtk.Window):
         provider = Gtk.CssProvider()
         style_context = Gtk.StyleContext()
         style_context.add_provider_for_screen(screen, provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
-        provider.load_from_path('assets/writer.css')
+        provider.load_from_path(os.path.join(CACHEDIR, "assets", "writer.css"))
 
         self.ftp_image = None
         self.local_image = None
@@ -86,7 +86,7 @@ class VarWriterGUI(Gtk.Window):
 def main():
     os.makedirs(CACHEDIR, exist_ok=True)
     app = VarWriterGUI()
-    app.set_icon_from_file(os.path.join(os.path.dirname(os.path.realpath(__file__)), "assets", "variscite_icon.png"))
+    app.set_icon_from_file(os.path.join(CACHEDIR, "assets", "variscite_icon.png"))
     app.connect('delete-event', Gtk.main_quit)
     app.main_window.show_all()
     Gtk.main()
