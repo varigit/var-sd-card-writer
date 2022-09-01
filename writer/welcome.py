@@ -7,6 +7,7 @@ gi.require_versions({'GdkPixbuf': "2.0", 'Gtk': "3.0"})
 from gi.repository import GdkPixbuf, Gtk
 import os
 
+from writer.config import CACHEDIR
 from writer.flasher import FlashImage
 from writer.device import query_disk_devices
 from writer.utils import get_readable_size
@@ -25,9 +26,7 @@ class MainWindow(Gtk.Box):
         self.set_margin_bottom(10)
 
         image = Gtk.Image()
-        logo = GdkPixbuf.Pixbuf.new_from_file(os.path.join(os.path.dirname(
-                                              os.path.realpath(__file__)),
-                                              "assets", "variscite.png"))
+        logo = GdkPixbuf.Pixbuf.new_from_file(os.path.join(CACHEDIR, "assets", "variscite.png"))
         image.set_from_pixbuf(logo)
 
         buttons_box = Gtk.Box()
