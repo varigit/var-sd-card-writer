@@ -98,6 +98,21 @@ def read_yaml_file(file_path) -> List:
     with open(file_path, "r") as fp:
         return list(yaml.safe_load_all(fp))
 
+
+def get_file_size(yaml_file_size) -> int:
+    """
+    Returns image size in bytes from size in YAML file
+    """
+    file_size = yaml_file_size
+
+    start = file_size.find('(') + 1
+    end = file_size.find(')')
+
+    file_size = file_size[start:end]
+    file_size = int(file_size.split()[0].replace(',',''))
+
+    return file_size
+
 def get_gzipped_file_size(file_path) -> int:
     """
     Returns the file size.
