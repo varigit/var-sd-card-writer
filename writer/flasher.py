@@ -112,7 +112,7 @@ class FlashImage(Gtk.Box):
             image_stat = os.stat(image_path)
             image_size = image_stat.st_size
 
-        cmd = f"pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY var_external_writer " \
+        cmd = f"pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY external_writer_var " \
               f"{image_path} {image_size} {self._device}"
         self.write_proc = Popen([cmd], shell=True, stdout=PIPE, bufsize=0)
 
