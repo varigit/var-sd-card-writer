@@ -12,6 +12,7 @@ import gi
 gi.require_versions({'GdkPixbuf': "2.0", 'Gtk': "3.0"})
 from gi.repository import GdkPixbuf, Gtk
 
+from writer.config import CACHEDIR
 from writer._information import AUTHORS
 from writer._information import COMMENTS
 from writer._information import COPYRIGHT
@@ -40,8 +41,7 @@ class MenuBar(Gtk.MenuBar):
     def on_about(self, menu, parent):
         dialog = Gtk.AboutDialog(parent=parent)
         logo = GdkPixbuf.Pixbuf.new_from_file(
-                  os.path.join(os.path.dirname(
-                  os.path.realpath(__file__)), "assets", "variscite.png"))
+                  os.path.join(CACHEDIR, "assets", "variscite.png"))
         if logo != None:
             dialog.set_logo(logo)
         else:
