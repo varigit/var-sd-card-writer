@@ -28,6 +28,8 @@
 
 This tool effortlessly helps the user to flash the latest OS images directly from the FTP server to SD card devices.
 
+[![Product Name Screen Shot][product-screenshot]](https://pypi.org/project/var-sd-card-writer/)
+
 ## 1. <a name='Getting Started'></a>Getting Started
 
 ### Installation on GNU/Linux
@@ -71,3 +73,4 @@ the terms of the [BSD 3-Clause License](https://github.com/varigit/var-sd-card-w
 [license-url]: https://github.com/varigit/var-sd-card-writer/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/company/variscite-ltd-
+[product-screenshot]: docs/images/main_window.png
