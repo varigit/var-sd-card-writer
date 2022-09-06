@@ -28,6 +28,30 @@
 
 This tool effortlessly helps the user to flash the latest OS images directly from the FTP server to SD card devices.
 
+## 1. <a name='Getting Started'></a>Getting Started
+
+### Installation on GNU/Linux
+
+To install the SD Card Writer tool, use the pip tool:
+   ```sh
+   pip3 install var-sd-card-writer
+   ```
+
+### Installation on Microsoft Windows
+
+Coming soon.
+
+### Installation on MacOS
+
+Coming soon.
+
+## 2. <a name='Usage'></a>Usage
+
+To use the tool, run in the terminal:
+   ```sh
+   var-sd-card-writer
+   ```
+
 ## <a name='Copyright and License'></a>Copyright and License
 
 Copyright 2022 Variscite LTD. Free use of this software is granted under
