@@ -82,11 +82,11 @@ class SelectImage(Gtk.Box):
             image = []
             image_path = release['Release']['Upload Path']
             image_size = release['Release']['Image Size']
-            image.append(os.path.basename(image_path))
-            image.append(image_size)
+            image_date = release['Release']['Release Date']
+            image.extend([image_date, os.path.basename(image_path), image_size])
             images_list.append(image)
 
-        store = Gtk.ListStore(str, str)
+        store = Gtk.ListStore(str, str, str)
         for image in images_list:
             store.append(image)
 
@@ -95,8 +95,10 @@ class SelectImage(Gtk.Box):
         tree.set_model(store)
 
         rendered_text = Gtk.CellRendererText()
-        image_name_column = Gtk.TreeViewColumn(f"{self._module} Images", rendered_text, text=0)
-        image_size_column = Gtk.TreeViewColumn(f"Size", rendered_text, text=1)
+        image_date_column = Gtk.TreeViewColumn(f"Date", rendered_text, text=0)
+        image_name_column = Gtk.TreeViewColumn(f"{self._module} Images", rendered_text, text=1)
+        image_size_column = Gtk.TreeViewColumn(f"Size", rendered_text, text=2)
+        tree.append_column(image_date_column)
         tree.append_column(image_name_column)
         tree.append_column(image_size_column)
         tree.connect("row-activated", self.on_select_item_from_tree)
