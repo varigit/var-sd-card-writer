@@ -31,9 +31,11 @@ class SelectImage(Gtk.Box):
         select_module_label.set_name("SelectModuleLabel")
         self.select_modules_combobox = Gtk.ComboBoxText()
         self.select_modules_combobox.connect("changed", self.on_module_combo_changed)
-        for module in VAR_MODULES:
+        for module in VAR_MODULES.values():
             self.select_modules_combobox.append_text(module)
         
+        self.full_name_to_short_name = {v: k for k, v in VAR_MODULES.items()}
+
         select_module_box.pack_start(select_module_label, False, False, 0)
         select_module_box.pack_start(self.select_modules_combobox, True, True, 0)
 
@@ -57,7 +59,8 @@ class SelectImage(Gtk.Box):
         self.pack_start(buttons_box, False, False, 0)
 
     def on_module_combo_changed(self, combo):
-        self._module = combo.get_active_text()
+        full_module_name = combo.get_active_text()
+        self._module = self.full_name_to_short_name[full_module_name]
         thread = Thread(target=self.recover_image_from_ftp)
         thread.daemon = True
         thread.start()
